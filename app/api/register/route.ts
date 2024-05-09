@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
 import prismadb from "@/libs/prismadb";
 import bcrypt from "bcrypt";
 
@@ -31,8 +30,6 @@ export async function POST(req: Request) {
         hashedPassword: hashedPassword,
       },
     });
-    await getServerSession();
-
     return new NextResponse(
       JSON.stringify({ userId: newUser.id, userData: newUser }),
       { status: 200 }
