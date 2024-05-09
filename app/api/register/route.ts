@@ -38,7 +38,3 @@ export async function POST(req: Request) {
     return new NextResponse(err, { status: 500 });
   }
 }
-
-export function getUserId() {
-  return;
-}
